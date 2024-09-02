@@ -1,0 +1,45 @@
+        <button class="bttn open-modal" id="Crwd">Start Crowdfund</button>
+
+
+    <div class="modal" id="Crdfnd">
+        <div class="modalcontent">
+            <h1 style="padding-left: 1rem; margin-bottom: -1rem;" id="caption">Start Crowdfund</h1>
+            <p style="padding-left: 1rem; margin-bottom: -3rem;">Begg them with your full chest. 💪</p>
+            <form class="frm" method="post" id="CF">
+                <input type="text" name="Name" id="" placeholder="Input Crowdfund Name">
+                <input type="number" name="Amount" id="" placeholder="Input Crowdfund Amount">
+                <span class="chck">
+                    <p>Exceed Limit?</p>
+                    <div class="checks">
+                        <input type="checkbox" name="Yes" id="">
+                    </div>
+                </span>
+                <span class="name">
+                    <input type="date" name="Sdate" class="names" id="Sdate" placeholder="Start Date">
+                    <input type="date" name="Edate" class="names" id="Edate" placeholder="End Date">
+                </span>
+                <textarea name="req" id="" placeholder="Crowdfund Requests"></textarea>
+
+                <button type="submit">Begin Crowdfund</button>
+            </form>
+        </div>
+    </div>
+
+
+                <form class='frm Ugiv' id='fm' action='post'>
+                <input type='hidden' name='val' value='$Cid'>
+                <button type='submit' id='end'>End CrowdFund</button>
+            </form>
+
+
+
+
+                if ($SDate == time()) {
+                $St = "Active";
+            } elseif (time() >= $EDate) {
+                $St = "Ended";
+            } elseif ($SDate > time()) {
+                $St = "Pending";
+            } else {
+                $St = "Ended";
+            }
